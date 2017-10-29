@@ -113,6 +113,8 @@ public class UserController {
             if (request.getParameter("userName").equals(userName) && request.getParameter("userPassword").equals(userPassword)) {
                 Url =  "admin";
                 request.getSession().setAttribute("userName",request.getParameter("userName"));
+                //如果验证成功 直接跳转 否则for循环会影响最终的结果
+                return Url;
             } else {
                Url =  "error";
                 request.getSession().setAttribute("userName",request.getParameter("error"));
