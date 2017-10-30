@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -32,11 +33,17 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/ShowAdmins")
-    public @ResponseBody Admin showAdmins(){
-
+//    public @ResponseBody Admin showAdmins(){
+    public @ResponseBody HashMap showAdmins(){
         List<Admin> admins = new ArrayList<Admin>();
         admins = adminService.selectUserAdmins();
-        return admins.get(0);
+        HashMap s = new HashMap();
+        s.put("code", 0);
+        s.put("msg", "");
+       // s.put("count",100);
+       // return admins.get(0);
+        s.put("data",admins);
+        return s;
     }
 
 }
