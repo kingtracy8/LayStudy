@@ -27,4 +27,8 @@ public class AdminServiceImpl implements IAdminService{
     public Admin getAdminById(int adminId) {
         return this.adminMapper.selectByPrimaryKey(adminId);
     }
+
+    public int deleteByPrimaryKey(int adminId) {
+        return adminMapper.deleteByPrimaryKey(adminId);
+    }
 }

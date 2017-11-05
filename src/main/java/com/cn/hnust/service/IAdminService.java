@@ -11,4 +11,5 @@ import java.util.List;
 public interface IAdminService {
     public List<Admin> selectUserAdmins();
     public Admin getAdminById(int adminId);
+    public int deleteByPrimaryKey(int adminId);
 }

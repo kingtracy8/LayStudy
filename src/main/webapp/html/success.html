@@ -42,8 +42,22 @@
                 layer.confirm('真的删除行么', function(index){
                     obj.del(); //删除对应行（tr）的DOM结构
 
-                    //向服务端发送删除指令
-                    console.log(data);
+                    //向服务端发送删除指令 需导入jq
+                    $.ajax({
+                        url:"http://localhost:8086/Admin/DeleteAdmin",
+                        type: "POST",
+                        data: JSON.stringify(data), //转JSON字符串
+                        dataType: 'json',
+                        contentType: 'application/json;charset=UTF-8', //contentType很重要
+                        success: function (result) {
+                            console.log(result);
+                            if (result == 1) {
+                                layer.msg('删除成功');
+                            } else {
+                                layer.msg('删除失败');
+                            }
+                        }
+                    });
                     layer.close(index);
                 });
             } else if(layEvent === 'edit'){
@@ -56,5 +70,6 @@
 
 
 </script>
+<script src="../js/jquery-3.2.1.min.js"></script>
 </body>
 </html>
