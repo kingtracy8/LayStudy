@@ -71,46 +71,9 @@
   </div>
 
   <div class="layui-body">
+
     <iframe id="body" name="body" src="success.html" scrolling="no" onload="changeFrameHeight()" ></iframe>
-    <!--
-    <div class="layui-tab layui-tab-brief" lay-filter="demo">
-      <ul class="layui-tab-title">
-        <li class="layui-this">欢迎</li>
-        <li>日期</li>
-        <li>分页</li>
-        <li>上传</li>
-      </ul>
-      <div class="layui-tab-content">
-        <div class="layui-tab-item layui-show">
 
-          <div class="layui-carousel" id="test1">
-            <div carousel-item>
-              <div><p class="layui-bg-green demo-carousel">Hi,欢迎您来到LayStudy后台管理系统！</p></div>
-              <div><p class="layui-bg-red demo-carousel">在数据管理中可以对一些基础数据进行操作</p></div>
-              <div><p class="layui-bg-blue demo-carousel">你也可以点击顶层导航来进入相应的管理页面</p></div>
-              <div><p class="layui-bg-orange demo-carousel">还可以在导航栏右侧设置管理员信息</p></div>
-              <div><p class="layui-bg-cyan demo-carousel">祝您工作顺利，生活愉快！</p></div>
-            </div>
-          </div>
-        </div>
-        <div class="layui-tab-item">
-          <div id="laydateDemo"></div>
-        </div>
-        <div class="layui-tab-item">
-          <div id="pageDemo"></div>
-        </div>
-        <div class="layui-tab-item">
-          <div class="layui-upload-drag" id="uploadDemo">
-            <i class="layui-icon"></i>
-            <p>点击上传，或将文件拖拽到此处</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <blockquote class="layui-elem-quote layui-quote-nm">layui 2.0 提供强力驱动</blockquote>
-
-  </div>
-!-->
   <div class="layui-footer">
     <!-- 底部固定区域 -->
     © layui.com - 底部固定区域
@@ -191,7 +154,7 @@
     });
 
 //让iframe自适应宽度和高度
-    function changeFrameHeight(){
+   function changeFrameHeight(){
         var ifm= document.getElementById("body");
         ifm.height=document.documentElement.clientHeight;
         ifm.width = document.documentElement.clientWidth;

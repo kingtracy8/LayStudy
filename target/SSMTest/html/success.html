@@ -11,7 +11,7 @@
     <tr>
         <th lay-data="{field:'id', width:80, sort: true}">ID</th>
         <th lay-data="{field:'userId', width:80}">用户ID</th>
-        <th lay-data="{field:'adminName', width:80}">管理员名称</th>
+        <th lay-data="{edit:'text',field:'adminName', width:120}">管理员名称</th>
         <th lay-data="{field:'password', width:80}">密码</th>
         <th lay-data="{field:'age', width:177}">年龄</th>
         <th lay-data="{fixed: 'right', width:160, align:'center', toolbar: '#Toolbar'}">
@@ -37,11 +37,14 @@
                 ,layEvent = obj.event; //获得 lay-event 对应的值
             if(layEvent === 'detail'){
                 layer.msg('查看操作');
+
             } else if(layEvent === 'del'){
                 layer.confirm('真的删除行么', function(index){
                     obj.del(); //删除对应行（tr）的DOM结构
-                    layer.close(index);
+
                     //向服务端发送删除指令
+                    console.log(data);
+                    layer.close(index);
                 });
             } else if(layEvent === 'edit'){
                 layer.msg('编辑操作');

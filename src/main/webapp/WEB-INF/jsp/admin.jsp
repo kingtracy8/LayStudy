@@ -10,8 +10,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title> LayStudy Manager</title>
-    <link rel="stylesheet" href="../js/css/layui.css">
+    <title> Car Hire System</title>
+    <link rel="stylesheet" href="../../js/css/layui.css">
     <style>
         body{margin: 10px;}
         .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
@@ -26,18 +26,18 @@
 
 <div class="layui-layout layui-layout-admin ">
     <div class="layui-header ">
-        <div class="layui-logo">LayStudy Manager</div>
+        <div class="layui-logo">Car Hire System</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left ">
             <li class="layui-nav-item"><a href="#">控制台</a></li>
-            <li class="layui-nav-item"><a href="">系统管理</a></li>
-            <!--<li class="layui-nav-item"><a href="">用户</a></li>-->
+            <li class="layui-nav-item"><a href="#">系统管理</a></li>
+           <li class="layui-nav-item"><a href="#">用户</a></li>
             <li class="layui-nav-item">
                 <a href="javascript:void(0)">其它系统</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">邮件管理</a></dd>
-                    <dd><a href="">消息管理</a></dd>
-                    <dd><a href="">授权管理</a></dd>
+                    <dd><a href="#">邮件管理</a></dd>
+                    <dd><a href="#">消息管理</a></dd>
+                    <dd><a href="#">授权管理</a></dd>
                 </dl>
             </li>
         </ul>
@@ -48,11 +48,11 @@
                     <span id="user"><%=userName%></span>
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
+                    <dd><a href="../../html/PersonalInfo.html" target="body">基本资料</a></dd>
+                    <dd><a href="#">安全设置</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="">退出</a></li>
+            <li class="layui-nav-item"><a href="#">退出</a></li>
         </ul>
     </div>
 
@@ -75,49 +75,15 @@
                         <dd><a href="javascript:;">列表二</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">云市场</a></li>
-                <li class="layui-nav-item"><a href="">关于</a></li>
+                <li class="layui-nav-item"><a href="#">云市场</a></li>
+                <li class="layui-nav-item"><a href="#">关于</a></li>
             </ul>
         </div>
     </div>
 
     <div class="layui-body">
 
-        <div class="layui-tab layui-tab-brief" lay-filter="demo">
-            <ul class="layui-tab-title">
-                <li class="layui-this">欢迎</li>
-                <li>日期</li>
-                <li>分页</li>
-                <li>上传</li>
-            </ul>
-            <div class="layui-tab-content">
-                <div class="layui-tab-item layui-show">
-
-                    <div class="layui-carousel" id="test1">
-                        <div carousel-item>
-                            <div><p class="layui-bg-green demo-carousel">Hi,欢迎您来到LayStudy后台管理系统！</p></div>
-                            <div><p class="layui-bg-red demo-carousel">在数据管理中可以对一些基础数据进行操作</p></div>
-                            <div><p class="layui-bg-blue demo-carousel">你也可以点击顶层导航来进入相应的管理页面</p></div>
-                            <div><p class="layui-bg-orange demo-carousel">还可以在导航栏右侧设置管理员信息</p></div>
-                            <div><p class="layui-bg-cyan demo-carousel">祝您工作顺利，生活愉快！</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="layui-tab-item">
-                    <div id="laydateDemo"></div>
-                </div>
-                <div class="layui-tab-item">
-                    <div id="pageDemo"></div>
-                </div>
-                <div class="layui-tab-item">
-                    <div class="layui-upload-drag" id="uploadDemo">
-                        <i class="layui-icon"></i>
-                        <p>点击上传，或将文件拖拽到此处</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <blockquote class="layui-elem-quote layui-quote-nm">layui 2.0 提供强力驱动</blockquote>
+        <iframe id="body" name="body" src="../../html/welcome.html" scrolling="no" onload="changeFrameHeight()" ></iframe>
 
     </div>
 
@@ -200,6 +166,14 @@
         });
      //   window.location.href="../../html/admin.html";
 
+        function changeFrameHeight(){
+            var ifm= document.getElementById("body");
+            ifm.height=document.documentElement.clientHeight;
+            ifm.width = document.documentElement.clientWidth;
+        }
+        window.onload=function(){
+            changeFrameHeight();
+        }
 
     });
 </script>
